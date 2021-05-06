@@ -33,7 +33,7 @@ class _stateSet(jimi.action._action):
                 stateObject.currentState = stateObject.newState
                 stateObject.newState = stateValue
                 stateObject.stateHoldExpiry = time.time() + self.stateholdTime
-                stateObject.update(["newState","data","stateHoldExpiry"])
+                stateObject.update(["newState","stateHoldExpiry"])
             elif stateObject.stateHoldExpiry < time.time() + (self.stateholdTime / 2):
                 stateObject.stateHoldExpiry = time.time() + self.stateholdTime
                 stateObject.update(["stateHoldExpiry"])
